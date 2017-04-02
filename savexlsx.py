@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 #这是已经有笔记guid之后保存为xlsx的程序
 
 import sys
