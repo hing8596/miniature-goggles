@@ -1,7 +1,7 @@
 ﻿# -*- coding: utf-8 -*-
 #这是一个单纯的提取Evernote中笔记本/笔记guid的程序
 
-#因为估计参考的多余直接下下来用的 ，所以这里有很多具体到冗余的注释
+#提供参考为主，实用为辅这里有很多具体到冗余的注释
 import sys
 reload(sys) 
 sys.setdefaultencoding( "utf-8" ) #避免中文乱码
