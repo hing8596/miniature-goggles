@@ -65,7 +65,7 @@ for sort in nt2g:
     # add records of that sort
     for piece in lst:
         length=len(piece)
-        end=length-7
+        end=length-6
         clear=piece[5:end]
         
         p1=clear.find(',')
