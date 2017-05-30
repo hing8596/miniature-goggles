@@ -3,7 +3,7 @@
 思路和目的
 记账还是excel最好了。但是没有满意的可以导出为相关格式的移动端程序。
 目前使用iOS的Workflow记录消费添加到Evernote的笔记。(https://workflow.is/workflows/33bb0de23cbc464abe4ccd6ae1ba445e)
-          格式是"[时间(ISO 860)],[名称],¥[金额]"（例“2017年4月2日 10:33,亚马逊余额充值,¥50”）
+          格式是"[时间(yyyy/MM/dd)],[名称],¥[金额]"（例“20170530,亚马逊余额充值,¥50”）
 
 **我的保存结构是，每一类开销是一本笔记（Notes)，所有类别保存在同一个笔记本（Notebook）下，且该笔记本无其他不相干笔记**
 
@@ -20,7 +20,7 @@
 杀毒软件可能会报警，但是你可以在这里看见源码。
 
 各文件
-ENnotes2expensexlsx_.exe是可供下载使用的可执行文件。
+ENnotes2expensexlsx_.exe是可供下载使用的可执行文件。#此步考虑放弃
 ENnotes2expensexlsx_.py是其源码
 
 getallguids2txt.py是提取全部笔记本guid和某指定笔记本内所有笔记的guid并均保存为txt文件的程序。需要自己将源码内各个参数信息填入，并且安装相关包
