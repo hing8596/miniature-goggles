@@ -13,9 +13,11 @@ reload(sys)
 sys.setdefaultencoding( "utf-8" ) 
 import re
 import xlsxwriter
+import time
 from evernote.api.client import EvernoteClient
 
-devToken =raw_input("输入你的 developer token\n".decode('utf-8').encode(sys.getfilesystemencoding())) 
+devToken =raw_input("输入你的 developer token\n".decode('utf-8').encode(sys.getfilesystemencoding()))
+#这里的decode与encode仅为正常显示中文提示语 
 client = EvernoteClient(token = devToken,sandbox=False)
 from evernote.edam.notestore import NoteStore 
 note_store = client.get_note_store()
@@ -46,9 +48,10 @@ for  notemeta in ourNoteList.notes:
     nt2g[notet]=noteg 
 
 #Save xlsx
-xlsxname=raw_input("输入要保存的xlsx文件名，含后缀。支持中文  \n".decode('utf-8').encode(sys.getfilesystemencoding()))
-
-workbook=xlsxwriter.Workbook(xlsxname)
+namecore=raw_input("输入文件名，支持中文等 \n 保存文件名将为 Expense[yyyyMMdd][输入内容].xlsx\n".decode('utf-8').encode(sys.getfilesystemencoding()))
+nametime=time.strftime('%Y%m%d',time.localtime(time.time()))
+namefull='Expense'+nametime+namecore+'.xlsx'
+workbook=xlsxwriter.Workbook(namefull)
 
 
 for sort in nt2g:
@@ -71,14 +74,14 @@ for sort in nt2g:
         p1=clear.find(',')
         p2=clear.find('¥')
         time=clear[:p1]
-        goods=clear[p1+1:p2]
+        goods=clear[p1+1:p2-1]
         fee=clear[p2:]
         
         sn.write(number,0,time)
         sn.write(number,1,goods)
         sn.write(number,2,fee)
         number=number+1
-#我每一条记录的格式是： 'YYYY年MM月D日 hh:ss,名称,¥费用'（参见分享的workflow）. 
+#我每一条记录的格式是： 'yyyy/MM/dd,名称,¥费用'（参见分享的workflow）. 
 #不一样的格式可能需要重新编写上一段正则
 #save xlsx
 workbook.close()
