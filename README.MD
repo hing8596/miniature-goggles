@@ -21,6 +21,7 @@
 
 各文件
 ENnotes2expensexlsx_.exe是可供下载使用的可执行文件。#此步考虑放弃
+
 ENnotes2expensexlsx_.py是其源码
 
 getallguids2txt.py是提取全部笔记本guid和某指定笔记本内所有笔记的guid并均保存为txt文件的程序。需要自己将源码内各个参数信息填入，并且安装相关包
